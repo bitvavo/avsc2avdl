@@ -1,4 +1,4 @@
-import io.github.wjur.avsc2avdl.api.Avsc2AvdlFacade
+import com.bitvavo.tools.avsc2avdl.api.Avsc2AvdlFacade
 
 fun main(args: Array<String>) {
     if (args.size != 1) {
