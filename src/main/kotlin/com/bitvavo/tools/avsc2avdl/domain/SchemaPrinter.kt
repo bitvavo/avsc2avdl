@@ -4,7 +4,7 @@ package com.bitvavo.tools.avsc2avdl.domain
 class SchemaPrinter {
     fun writeString(schema: Schema): String {
         return """@namespace("${schema.namespace}")
-protocol ${schema.name} {
+protocol ${schema.name}Protocol {
 ${schema.writeDocString(0)}${tabs(0)}record ${schema.name} {
 ${schema.fields.writeFieldsString(1)}
 ${tabs(0)}}${schema.fields.writeTypesString(0)}

@@ -18,7 +18,7 @@ internal class SchemaPrinterTest {
         )
 
         val expected = """@namespace("some.namespace")
-protocol SchemaName {
+protocol SchemaNameProtocol {
     /** some schema docs */
     record SchemaName {
 
@@ -41,7 +41,7 @@ protocol SchemaName {
         )
 
         val expected = """@namespace("some.namespace")
-protocol SchemaName {
+protocol SchemaNameProtocol {
     /** some schema docs */
     record SchemaName {
         /** this is test field doc */
@@ -65,7 +65,7 @@ protocol SchemaName {
         )
 
         val expected = """@namespace("some.namespace")
-protocol SchemaName {
+protocol SchemaNameProtocol {
     /** some schema docs */
     record SchemaName {
         /** this is test field doc */
@@ -89,7 +89,7 @@ protocol SchemaName {
         )
 
         val expected = """@namespace("some.namespace")
-protocol SchemaName {
+protocol SchemaNameProtocol {
     /** some schema docs */
     record SchemaName {
         /** this is test field doc */
@@ -113,7 +113,7 @@ protocol SchemaName {
         )
 
         val expected = """@namespace("some.namespace")
-protocol SchemaName {
+protocol SchemaNameProtocol {
     /** some schema docs */
     record SchemaName {
         /** this is test field doc */
@@ -137,7 +137,7 @@ protocol SchemaName {
         )
 
         val expected = """@namespace("some.namespace")
-protocol SchemaName {
+protocol SchemaNameProtocol {
     /** some schema docs */
     record SchemaName {
         /** this is test field doc */
@@ -161,7 +161,7 @@ protocol SchemaName {
         )
 
         val expected = """@namespace("some.namespace")
-protocol SchemaName {
+protocol SchemaNameProtocol {
     /** some schema docs */
     record SchemaName {
         /** this is test field doc */

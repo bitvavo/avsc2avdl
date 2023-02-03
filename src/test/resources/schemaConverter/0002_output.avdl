@@ -1,5 +1,5 @@
 @namespace("this.is.test.record.namespace")
-protocol TestRecord {
+protocol TestRecordProtocol {
     /** This is TestRecord event docs */
     record TestRecord {
         /** Some nested record */

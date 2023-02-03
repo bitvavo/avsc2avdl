@@ -1,5 +1,5 @@
 @namespace("this.is.test.record.namespace")
-protocol TestRecord {
+protocol TestRecordProtocol {
     record TestRecord {
         @java-class("java.math.BigDecimal") string value;
         @java-key-class("java.math.BigDecimal") map<string> typedKeys;
