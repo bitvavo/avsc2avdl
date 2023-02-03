@@ -62,7 +62,7 @@ private fun Documentable.writeDocString(level: Int): String {
 }
 
 private fun List<Field>.writeFieldsString(level: Int): String {
-    return this.joinToString("\n\n") {
+    return this.joinToString("\n") {
         """${it.writeDocString(level)}${tabs(level)}${it.writeTypeName()}${it.writeUserDataType()} ${it.name}${it.writeDefault()};"""
     }
 }

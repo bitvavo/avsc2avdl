@@ -4,11 +4,8 @@ protocol TestRecord {
     record TestRecord {
         /** Simple string field doc */
         string simpleStringField;
-
         string simpleNoDocStringField;
-
         string simpleStringFieldWithDefault = "default value";
-
         union { null, string } nullableStringFieldWithDefault = null;
     }
 }

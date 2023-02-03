@@ -4,7 +4,6 @@ protocol TestRecord {
     record TestRecord {
         /** Some nested record */
         union { null, NestedRecord } someRecordA = null;
-
         NestedRecord someRecordB;
     }
 
@@ -12,7 +11,6 @@ protocol TestRecord {
     record NestedRecord {
         /** Nested record id */
         string @userDataType("NestedRecordId") fieldWithUserDataType;
-
         array<NestedArrayItem> badges;
     }
 
