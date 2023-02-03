@@ -22,6 +22,11 @@
       "name": "nullableStringFieldWithDefault",
       "type": ["null", "string"],
       "default": null
+    },
+    {
+      "name": "nullableIntFieldWithDefault",
+      "type": ["int", "null"],
+      "default": null
     }
   ]
 }

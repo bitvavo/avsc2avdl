@@ -3,7 +3,7 @@ protocol TestRecord {
     /** This is TestRecord event docs */
     record TestRecord {
         /** Some nested record */
-        union { null, NestedRecord } someRecordA = null;
+        NestedRecord? someRecordA = null;
         NestedRecord someRecordB;
     }
 

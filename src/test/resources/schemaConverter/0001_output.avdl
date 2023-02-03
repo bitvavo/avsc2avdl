@@ -6,6 +6,7 @@ protocol TestRecord {
         string simpleStringField;
         string simpleNoDocStringField;
         string simpleStringFieldWithDefault = "default value";
-        union { null, string } nullableStringFieldWithDefault = null;
+        string? nullableStringFieldWithDefault = null;
+        int? nullableIntFieldWithDefault = null;
     }
 }

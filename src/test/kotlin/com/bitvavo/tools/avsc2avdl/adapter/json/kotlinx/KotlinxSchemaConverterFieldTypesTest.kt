@@ -162,9 +162,11 @@ internal class KotlinxSchemaReaderFieldTypesTest {
 
         // then
         val field = schema.fields.first()
-        assertThat(field.type).isEqualTo(UnionTypeDef(listOf(
+        assertThat(field.type).isEqualTo(
+            UnionTypeDef(listOf(
             NullTypeDef, StringTypeDef(), IntTypeDef(), BooleanTypeDef()
-        )))
+        ))
+        )
         assertThat(field.name).isEqualTo("someUnionField")
     }
 
@@ -196,9 +198,11 @@ internal class KotlinxSchemaReaderFieldTypesTest {
 
         // then
         val field = schema.fields.first()
-        assertThat(field.type).isEqualTo(EnumTypeDef(
+        assertThat(field.type).isEqualTo(
+            EnumTypeDef(
             "EnumTypeName", "Enum type docs", listOf("ABC", "XYZ", "THIRD")
-        ))
+        )
+        )
         assertThat(field.name).isEqualTo("someEnumField")
     }
 
@@ -258,12 +262,14 @@ internal class KotlinxSchemaReaderFieldTypesTest {
 
         // then
         val field = schema.fields.first()
-        assertThat(field.type).isEqualTo(RecordTypeDef(
+        assertThat(field.type).isEqualTo(
+            RecordTypeDef(
             "RecordTypeName", "Record type docs", listOf(
                 Field("strField", null, StringTypeDef(), null),
                 Field("booleanField", null, BooleanTypeDef(), null),
             )
-        ))
+        )
+        )
         assertThat(field.name).isEqualTo("someRecordField")
     }
 

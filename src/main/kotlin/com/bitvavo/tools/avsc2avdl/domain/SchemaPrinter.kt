@@ -115,12 +115,41 @@ private fun writeTypeName(type1: TypeDef): String {
         is LongTypeDef -> "long"
         is StringTypeDef -> "string"
         is BooleanTypeDef -> "boolean"
-        is UnionTypeDef -> """union { ${type1.types.joinToString(", ") { writeTypeName(it) }} }"""
+        is UnionTypeDef -> writeUnionTypeName(type1)
         is RecordTypeDef -> type1.name
         is ReferenceByNameTypeDef -> type1.name
         is MapTypeDef -> "map<${writeTypeName(type1.valueType)}>"
         is ArrayTypeDef -> "array<${writeTypeName(type1.itemType)}>"
         is EnumTypeDef -> type1.name
+    }
+}
+
+private fun writeUnionTypeName(type1: UnionTypeDef): String {
+    if (type1.types.size == 2) {
+        val first = type1.types[0]
+        val second = type1.types[1]
+
+        if (first is NullTypeDef && acceptsNullableSuffix(second)) {
+            return writeTypeName(second) + "?"
+        }
+        if (second is NullTypeDef && acceptsNullableSuffix(first)) {
+            return writeTypeName(first) + "?"
+        }
+    }
+
+    return """union { ${type1.types.joinToString(", ") { writeTypeName(it) }} }"""
+}
+
+private fun acceptsNullableSuffix(typeDef: TypeDef): Boolean {
+    return when (typeDef) {
+        is IntTypeDef,
+        is LongTypeDef,
+        is StringTypeDef,
+        is BooleanTypeDef,
+        is RecordTypeDef,
+        is ReferenceByNameTypeDef,
+        is EnumTypeDef -> true
+        else -> false
     }
 }
 
