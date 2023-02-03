@@ -73,11 +73,14 @@ private fun JsonElement?.toSchemaDefault(): DefaultValue? {
         null -> DefaultNull
         JsonNull -> DefaultNull
         is JsonPrimitive -> {
+            if (isString) {
+                return DefaultString(content)
+            }
+
             val booleanV = this.booleanOrNull?.let { DefaultBoolean(it) }
             val longV = this.longOrNull?.let { DefaultNumber(it) }
             val floatV = this.floatOrNull?.let { DefaultNumber(it) }
-            val stringV = this.takeIf { it.isString }?.let { DefaultString(it.content) }
-            booleanV ?: longV ?: floatV ?: stringV
+            booleanV ?: longV ?: floatV
         }
         is JsonArray -> {
             require(this.isEmpty())

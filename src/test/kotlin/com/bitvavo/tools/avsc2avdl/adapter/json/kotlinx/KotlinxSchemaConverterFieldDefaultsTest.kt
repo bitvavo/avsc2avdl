@@ -38,6 +38,30 @@ internal class KotlinxSchemaReaderFieldDefaultsTest {
     }
 
     @Test
+    fun `should read string boolean default`() {
+        // given
+        val defaultString = """ "false" """
+
+        // when
+        val schema = converter.read(someSchemaWithField(defaultString))
+
+        // then
+        assertThat(schema.fields.first().default).isEqualTo(DefaultString("false"))
+    }
+
+    @Test
+    fun `should read string numeric default`() {
+        // given
+        val defaultString = """ "42" """
+
+        // when
+        val schema = converter.read(someSchemaWithField(defaultString))
+
+        // then
+        assertThat(schema.fields.first().default).isEqualTo(DefaultString("42"))
+    }
+
+    @Test
     fun `should read number default`() {
         // given
         val defaultString = "123"

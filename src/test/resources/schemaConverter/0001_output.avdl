@@ -5,7 +5,8 @@ protocol TestRecord {
         /** Simple string field doc */
         string simpleStringField;
         string simpleNoDocStringField;
-        string simpleStringFieldWithDefault = "default value";
+        string simpleStringFieldWithDefault = "false";
+        boolean boolFieldWithDefault = false;
         string? nullableStringFieldWithDefault = null;
         int? nullableIntFieldWithDefault = null;
     }

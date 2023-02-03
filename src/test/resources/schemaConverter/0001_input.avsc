@@ -16,7 +16,12 @@
     {
       "name": "simpleStringFieldWithDefault",
       "type": "string",
-      "default": "default value"
+      "default": "false"
+    },
+    {
+      "name": "boolFieldWithDefault",
+      "type": "boolean",
+      "default": false
     },
     {
       "name": "nullableStringFieldWithDefault",
