@@ -1,9 +1,17 @@
 import com.bitvavo.tools.avsc2avdl.api.Avsc2AvdlFacade
+import java.io.File
 
 fun main(args: Array<String>) {
-    if (args.size != 1) {
-        println("avsc2avdl [*.avsc]")
+    if (args.isEmpty() || args.size > 2) {
+        println("avsc2avdl INPUT [OUTPUT]")
         return
     }
-    print(Avsc2AvdlFacade.INSTANCE.convert(args[0]))
+
+    val output = Avsc2AvdlFacade.INSTANCE.convert(args[0])
+    if (args.size == 2) {
+        val file = File(args[1])
+        file.writeText(output)
+    } else {
+        print(output)
+    }
 }
