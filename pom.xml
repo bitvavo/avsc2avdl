@@ -17,6 +17,7 @@
         <serialization.version>1.5.0-RC</serialization.version>
         <assertj.version>3.13.2</assertj.version>
         <junit.version>5.9.2</junit.version>
+        <project.build.sourceEncoding>UTF8</project.build.sourceEncoding>
         <main.class>MainKt</main.class>
     </properties>
 
